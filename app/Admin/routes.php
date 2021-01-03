@@ -12,5 +12,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-
+    //服务器管理
+    $router->resource('servers', ServersController::class);
 });
