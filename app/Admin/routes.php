@@ -14,4 +14,6 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     //服务器管理
     $router->resource('servers', ServersController::class);
+    //github仓库管理
+    $router->resource('github-repositories', GithubRepositoriesController::class);
 });
