@@ -27,7 +27,7 @@ class ServersController extends AdminController
         $grid = new Grid(new Servers());
 
         $grid->column('id', __('Id'))->sortable();
-        $grid->column('name', __('名称'));
+        $grid->column('name', __('名称'))->limit(50);
         $grid->column('server_website', __('服务商网站'))->link();
         $grid->column('ip', __('IP'));
         $grid->column('port', __('端口'));
