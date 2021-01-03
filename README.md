@@ -1,62 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 个人管理后台
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+工作后发现很多东西需要记录、整理，缺少一个可以方便记录的平台，于是决定基于laravel-admin做了一个
 
-## About Laravel
+## 系统环境
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP: 7.3+
+- Mysql:5.7+（mysql8暂时未测）
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 框架技术
+- laravel:8.x
+- laravel-admin:1.8
+- captcha:3.x
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 功能
 
-## Learning Laravel
+- 服务器管理 :ballot_box_with_check:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- github仓库管理 
+    - 批量保存github动态中的仓库 :ballot_box_with_check:
+    - 批量star github动态中的仓库
+    - ...
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 公众号管理
+    - 用户管理
+    - 留言管理
+    
+- 企业微信
+    - 留言管理
+    - 定时提醒
 
-## Laravel Sponsors
+- 个人图书馆
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- 备忘录
 
-### Premium Partners
+- ...
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## 安装项目
 
-## Contributing
+1. 打开终端，使用`composer install`安装依赖包。
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. 使用`cp .env.example .env`复制配置文件，根据自己的环境配置。
 
-## Code of Conduct
+3. 使用`php artisan key:generate`创建随机秘钥。
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. 安装[laravel-admin](https://laravel-admin.org/docs/zh/1.x/quick-start)。
 
-## Security Vulnerabilities
+### 后台菜单路由
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**注意：此处需要根据需求人工添加**
 
-## License
+|序号|名称|路由|
+|---|---|---|
+|1|服务器管理|servers|
+|2|Github仓库管理|github-repositories|
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### github动态命令行
+
+- 批量保存
+
+    - 需要配置`.env`中`GITHUB_USERNAME`和`GITHUB_TOKEN`参数,`GITHUB_USERNAME`为目标用户名（暂时测试可以获取他人的feed流），执行`php artisan github:feed`，将获取的用户此时前100个动态保存至数据库，建议配合定时器。
+
