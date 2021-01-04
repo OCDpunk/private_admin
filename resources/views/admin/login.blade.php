@@ -48,6 +48,7 @@
                 <input type="text" class="form-control" placeholder="{{ trans('admin.username') }}" name="username" value="{{ old('username') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
+
             <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
 
                 @if($errors->has('password'))
@@ -65,7 +66,7 @@
                 <div class="form-group has-feedback {!! !$errors->has('captcha') ?: 'has-error' !!}">
                     @if($errors->has('captcha'))
                         @foreach($errors->get('captcha') as $message)
-                            <label class="control-label" for="inputError" style="margin-left: 15px"><i class="fa fa-times-circle-o">{{$message}}</i></label></br>
+                            <label class="control-label" for="inputError" style="margin-left: 15px"><i class="fa fa-times-circle-o"></i>{{$message}}</label><br>
                         @endforeach
                     @endif
                     <input type="text" class="form-control" style="display: inline;width: 55%; margin-left: 15px" placeholder="{{ trans('admin.captcha') }}" name="captcha">
