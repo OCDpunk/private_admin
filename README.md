@@ -23,7 +23,7 @@
 
 - 公众号管理
     - 用户管理
-    - 留言管理
+    - 留言管理 :ballot_box_with_check:
     
 - 企业微信
     - 留言管理
@@ -53,6 +53,8 @@
 |---|---|---|
 |1|服务器管理|servers|
 |2|Github仓库管理|github-repositories|
+|3|公众号配置管理|media-platform-config|
+|4|公众号消息管理|media-platform-messages|
 
 
 ### github动态命令行
