@@ -56,6 +56,10 @@ class MediaPlatformMessagesController extends AdminController
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
+        //快捷搜索
+        $grid->quickSearch('from_user_name', 'content', 'media_platform_code');
+        //倒叙
+        $grid->model()->orderBy('id', 'desc');
         return $grid;
     }
 
