@@ -14,7 +14,7 @@ class MediaPlatformMessages extends Model
 
     protected $table = 'media_platform_messages';
 
-    protected $fillable = ['to_user_name', 'from_user_name', 'create_time', 'msg_type', 'msg_id', 'content', 'media_id',
+    protected $fillable = ['media_platform_name', 'media_platform_code', 'to_user_name', 'from_user_name', 'create_time', 'msg_type', 'msg_id', 'content', 'media_id',
         'pic_url', 'format', 'recognition', 'thumb_media_id', 'location_x', 'location_y', 'scale', 'label', 'title', 'description',
         'url', 'original_data', 'created_at', 'updated_at'
     ];

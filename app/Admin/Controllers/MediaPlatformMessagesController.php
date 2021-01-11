@@ -33,7 +33,7 @@ class MediaPlatformMessagesController extends AdminController
         $grid = new Grid(new MediaPlatformMessages());
 
         $grid->column('id', __('Id'))->sortable();
-        $grid->column('media_platform_code', __('Media platform code'));
+        $grid->column('media_platform_name', __('Media platform name'));
 //        $grid->column('to_user_name', __('To user name'));
         $grid->column('from_user_name', __('From user name'));
         $grid->column('create_time', __('Create time'));
@@ -75,6 +75,7 @@ class MediaPlatformMessagesController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('media_platform_code', __('Media platform code'));
+        $show->field('media_platform_name', __('Media platform name'));
         $show->field('to_user_name', __('To user name'));
         $show->field('from_user_name', __('From user name'));
         $show->field('create_time', __('Create time'));
@@ -112,6 +113,7 @@ class MediaPlatformMessagesController extends AdminController
         $form = new Form(new MediaPlatformMessages());
 
         $form->text('media_platform_code', __('Media platform code'));
+        $form->text('media_platform_name', __('Media platform name'));
         $form->text('to_user_name', __('To user name'));
         $form->text('from_user_name', __('From user name'));
         $form->datetime('create_time', __('Create time'));
