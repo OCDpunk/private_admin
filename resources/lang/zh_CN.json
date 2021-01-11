@@ -211,5 +211,6 @@
     "Account secret": "微信公众号秘钥",
     "Account token": "微信公众号令牌",
     "Account aes key": "微信公众号消息加解密密钥",
-    "More": "拓展"
+    "More": "拓展",
+    "Media platform name": "公众号名称"
 }

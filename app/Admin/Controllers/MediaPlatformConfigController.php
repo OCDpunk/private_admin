@@ -27,7 +27,8 @@ class MediaPlatformConfigController extends AdminController
         $grid = new Grid(new MediaPlatformConfig());
 
         $grid->column('id', __('Id'));
-        $grid->column('code', __('Code'));
+        $grid->column('media_platform_name', __('Media platform name'));
+        $grid->column('media_platform_code', __('Media platform code'));
         $grid->column('account_appid', __('Account appid'));
         $grid->column('account_secret', __('Account secret'));
         $grid->column('account_token', __('Account token'));
@@ -51,7 +52,8 @@ class MediaPlatformConfigController extends AdminController
         $show = new Show(MediaPlatformConfig::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('code', __('Code'));
+        $show->field('media_platform_name', __('Media platform name'));
+        $show->field('media_platform_code', __('Media platform code'));
         $show->field('account_appid', __('Account appid'));
         $show->field('account_secret', __('Account secret'));
         $show->field('account_token', __('Account token'));
@@ -75,7 +77,8 @@ class MediaPlatformConfigController extends AdminController
     {
         $form = new Form(new MediaPlatformConfig());
 
-        $form->text('code', __('Code'));
+        $form->text('media_platform_name', __('Media platform name'));
+        $form->text('media_platform_code', __('Media platform code'));
         $form->text('account_appid', __('Account appid'));
         $form->text('account_secret', __('Account secret'));
         $form->text('account_token', __('Account token'));
