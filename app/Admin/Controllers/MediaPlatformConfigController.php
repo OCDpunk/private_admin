@@ -33,6 +33,7 @@ class MediaPlatformConfigController extends AdminController
         $grid->column('account_secret', __('Account secret'));
         $grid->column('account_token', __('Account token'));
         $grid->column('account_aes_key', __('Account aes key'));
+//        $grid->column('subscribe_message', __('Subscribe message'));
 //        $grid->column('more', __('More'));
 //        $grid->column('remark', __('Remark'));
         $grid->column('created_at', __('Created at'));
@@ -58,6 +59,7 @@ class MediaPlatformConfigController extends AdminController
         $show->field('account_secret', __('Account secret'));
         $show->field('account_token', __('Account token'));
         $show->field('account_aes_key', __('Account aes key'));
+        $show->field('subscribe_message', __('Subscribe message'));
         $show->field('more', __('More'))->as(function ($originalData) {
             return json_encode($originalData);
         })->json();
@@ -83,6 +85,7 @@ class MediaPlatformConfigController extends AdminController
         $form->text('account_secret', __('Account secret'));
         $form->text('account_token', __('Account token'));
         $form->text('account_aes_key', __('Account aes key'));
+        $form->text('subscribe_message', __('Subscribe message'));
         $form->textarea('more', __('More'));
         $form->textarea('remark', __('Remark'));
 
