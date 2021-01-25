@@ -85,7 +85,7 @@ class MediaPlatformConfigController extends AdminController
         $form->text('account_secret', __('Account secret'));
         $form->text('account_token', __('Account token'));
         $form->text('account_aes_key', __('Account aes key'));
-        $form->text('subscribe_message', __('Subscribe message'));
+        $form->textarea('subscribe_message', __('Subscribe message'));
         $form->textarea('more', __('More'));
         $form->textarea('remark', __('Remark'));
 
